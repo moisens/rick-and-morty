@@ -1,7 +1,12 @@
 .header-container {
   background-color: #9ADBD5;
-  width: 80vw;
+  background-image: url('../../assets/rick.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  width: 100vw;
   height: 100vh;
+  padding-bottom: 260px;
 
   .header-title {
     display: flex;
@@ -12,6 +17,7 @@
     color: #F5F5F5;
     text-shadow: 1px 2px 3px #0000002f;
     padding-bottom: 40px;
+    
 
   }
 
@@ -45,14 +51,17 @@
   .datas-container {
     //background-color: rgb(243, 243, 243);
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
-    padding: 0 30px 0 30px;
+    grid-template-columns: repeat(auto-fill, minmax(560px, 1fr));
+    justify-content: center;
+    align-items: center;
+    padding: 0 100px 0 100px;
 
   }
   .page-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding-bottom: 60px;
     //background-color: lightblue;
 
     .page-content {
@@ -62,6 +71,7 @@
       display: flex;
       gap: 20px;
       padding: 10px;
+      box-shadow: 1px 2px 3px #0000002f;
 
       .page-image {
         width: 100px;
@@ -69,9 +79,63 @@
         background-color: #03776b;
         border-radius: 8px;
 
+        img {
+          width: 100%;
+          border-radius: 8px;
+          background-size: cover;
+          object-fit: cover;
+        }
+
       }
+
+      .page-descript {
+        
+        p {
+          line-height: 1.9;
+          padding-bottom: 20px;
+        }
+
+        .fa-cross {
+          color: #f63232;
+        }
+        .fa-circle {
+          color: #3ec53e;
+        }
+        .read-more {
+          background-color: #03776b;
+          color: #fff;
+          border: none;
+          border-radius: 8px;
+          padding: 3px 8px;
+          cursor: pointer;
+          font-weight: 900;
+        }
+      }
+
     }
 
+  }
+
+  .page-btn {
+    display: flex;
+    padding-left: 15%;
+    
+    gap: 8px;
+
+    button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: #fff;
+      cursor: pointer;
+      box-shadow: 1px 2px 3px #0000002f;
+
+      &:hover {
+        background-color: #03776ba8;
+        color: #fff;
+      }
+
+    }
   }
 
   .description-container {
@@ -84,18 +148,21 @@
     .description-content{
       width: 520px;
       height: auto;
-      background-color: lightskyblue;
+      background-color: #fff;
       border-radius: 8px;
+      box-shadow: 1px 2px 3px #0000002f;
+
       p {
         line-height: 1.9;
       }
 
     }
     .description-img {
-      width: 320px;
-      height: 200px;
-      background-color: blue;
+      width: 380px;
+      height: 280px;
+      background-color: #03776b;
       border-radius: 8px;
+      box-shadow: 1px 2px 3px #0000002f;
 
       img {
         width: 100%;

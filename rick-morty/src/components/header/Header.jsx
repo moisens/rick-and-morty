@@ -1,6 +1,39 @@
 import './header.scss';
+import Page from '../pagination/Page';
+import GetOnechar from '../singlecharacter/Singlechar';
+import { ErrorBoundary } from 'react-error-boundary';
+import CustomButtons from '../customComponents/CustomButton';
+import { useState } from 'react';
+
+
+const ErrorBoundaryFallBack = ({ error, resetErrorBoundary }) => {
+  return (
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre>{error.message}</pre>
+      <CustomButtons 
+      style={{
+        backgroundColor: "purple",
+        color: "white",
+        padding: "15px 38px",
+        fontSize: "20px",
+        margin: "20px",
+        border: "none",
+      }}
+        title='Try again'
+        onClick={resetErrorBoundary} 
+      />
+    </div>
+  )
+}
+
+
+
 
 const Header = () => {
+
+  const [description, setDescription] = useState('');
+ 
   return (
     <section className='header-container'>
       <header className='header-title'>
@@ -17,21 +50,14 @@ const Header = () => {
           <button type='submit'>Search</button>
         </div>
         <div className='datas-container'>
-          <div className='page-container'>
-            <div className='page-content'>
-              <div className='page-image'>
-                <img src="" alt="" />
-                IMAGE
-              </div>
-              <p>page-description</p>
-            </div>
-          </div>
-          <div className='description-container'>
-            <div className='description-content'>
-              <p>description</p>
-            </div>
-            <div className='description-img'>image</div>
-          </div>
+          {/*Start Page container*/}
+          <ErrorBoundary FallbackComponent={ErrorBoundaryFallBack} >
+            <Page description={description} setDescription={setDescription} />
+          </ErrorBoundary>
+          {/*End Page container*/}
+          {/*Single character*/}
+            <GetOnechar description={description} />
+          {/*End Single character*/}
         </div>
       </section>
 
