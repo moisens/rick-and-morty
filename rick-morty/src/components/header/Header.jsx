@@ -1,6 +1,5 @@
 import './header.scss';
 import Page from '../pagination/Page';
-import GetOnechar from '../singlecharacter/Singlechar';
 import { ErrorBoundary } from 'react-error-boundary';
 import CustomButtons from '../customComponents/CustomButton';
 import { useState } from 'react';
@@ -31,8 +30,6 @@ const ErrorBoundaryFallBack = ({ error, resetErrorBoundary }) => {
 
 
 const Header = () => {
-
-  const [description, setDescription] = useState('');
  
   return (
     <section className='header-container'>
@@ -52,12 +49,9 @@ const Header = () => {
         <div className='datas-container'>
           {/*Start Page container*/}
           <ErrorBoundary FallbackComponent={ErrorBoundaryFallBack} >
-            <Page description={description} setDescription={setDescription} />
+            <Page />
           </ErrorBoundary>
           {/*End Page container*/}
-          {/*Single character*/}
-            <GetOnechar description={description} />
-          {/*End Single character*/}
         </div>
       </section>
 
